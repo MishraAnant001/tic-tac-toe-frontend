@@ -20,7 +20,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         console.log(error);
-        if ((error.error.message as string).indexOf("access token expired")>-1) {
+        if ((error.error && error.error.message as string).indexOf("access token expired")>-1) {
           return this.handle401Error(req, next);
         }
         return throwError(() => error);
