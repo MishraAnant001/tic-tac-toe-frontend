@@ -7,7 +7,7 @@ import { IUser } from 'src/app/models';
 })
 export class UserService {
   private signupApi = "http://192.168.4.5:8000/api/v1/user/signup"
-  private loginApi = "http://192.168.4.5:8000/api/v1/user/login"
+  private loginApi = "http://192.168.4.5/api/v1/user/login"
   private getApi = "http://192.168.4.5:8000/api/v1/user/"
   constructor(private http: HttpClient) { }
 
